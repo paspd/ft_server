@@ -9,13 +9,7 @@ RUN apt-get install -y php7.3 php7.3-fpm php7.3-mysql php-common php7.3-cli php7
 RUN apt-get install -y php-mbstring php-zip php-gd
 RUN apt-get install -y php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
 
-COPY srcs/auto_index.sh ./
-COPY srcs/start.sh ./
-COPY srcs/default ./
-COPY srcs/defaultoff ./
-COPY srcs/config.inc.php ./
-COPY srcs/wp-config.php ./
-
+COPY srcs/* ./
 
 CMD bash /start.sh
 EXPOSE 80
